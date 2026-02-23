@@ -1,0 +1,97 @@
+:root {
+    --black: #111111;
+    --white: #ffffff;
+    --soft-blush: #F2C7C7;
+    --cherry-pink: #FFB7C5;
+    --soft-gold: #C6A14A;
+    --grey: #ABABAB;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.heading {
+    font-family: "GFS Didot", serif;
+}
+
+.paragraph {
+    font-family: "Inter", sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 40px;
+    height: 70px;
+    border-bottom: 1px solid var(--soft-gold);
+    background: var(--white);
+
+    .left {
+        a {
+            text-decoration: none;
+
+            h1 {
+                color: #111111;
+                font-size: 40px;
+            }
+        }
+    }
+
+    // left ends here
+    .middle {
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: var(--black);
+                    font-size: 18px;
+                    font-weight: 500;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: var(--soft-gold);
+                    }
+                }
+            }
+        }
+    }
+
+    // middle ends here
+    .right {
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: var(--black);
+                    font-size: 18px;
+                    font-weight: 500;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: var(--soft-gold);
+                    }
+                }
+            }
+        }
+    }
+}
+// navbar ends here
+
+.hero{
+    background-color: #44ff00;
+}
+body{
+    background-color: red;
+}
