@@ -89,9 +89,12 @@ nav {
 }
 // navbar ends here
 
-.hero{
-    background-color: #44ff00;
-}
 body{
-    background-color: red;
+    background-color: var(--white);
+    height: 150vh;
+}
+.hero{
+    height: calc(100vh - 70px);
+    width: 100%;
+    background: linear-gradient(45deg, var(--white), var(--soft-blush));
 }

@@ -67,10 +67,13 @@ nav .right ul li a:hover {
   color: var(--soft-gold);
 }
 
-.hero {
-  background-color: #44ff00;
+body {
+  background-color: var(--white);
+  height: 150vh;
 }
 
-body {
-  background-color: red;
+.hero {
+  height: calc(100vh - 70px);
+  width: 100%;
+  background: linear-gradient(45deg, var(--white), var(--soft-blush));
 }/*# sourceMappingURL=style.css.map */
