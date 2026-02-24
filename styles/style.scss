@@ -1,3 +1,111 @@
+@mixin mobile {
+    @media screen and (max-width:480px) {
+        @content
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width:768px) {
+        @content
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width:1200px) {
+        @content
+    }
+}
+
+::-webkit-scrollbar {
+    background-color: var(--Background);
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--green), var(--orange));
+    border-radius: 10px;
+}
+
+//animation
+@keyframes left {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.FromLeft {
+    animation: left linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes bottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.FromBottom {
+    animation: bottom linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+@keyframes Top {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.FromTop {
+    animation: Top linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+}
+
+@keyframes right {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.FromRight {
+    animation: right linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+// end of animation
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: .5px;
+}
 :root {
     --black: #111111;
     --white: #ffffff;
@@ -29,7 +137,6 @@ nav {
     height: 70px;
     border-bottom: 1px solid var(--soft-gold);
     background: var(--white);
-
     .left {
         a {
             text-decoration: none;
@@ -37,6 +144,9 @@ nav {
             h1 {
                 color: #111111;
                 font-size: 40px;
+                @include mobile{
+                    font-size: 30px;
+                }
             }
         }
     }
@@ -86,6 +196,12 @@ nav {
             }
         }
     }
+    @include mobile {
+        padding-inline: 20px;
+        .middle {
+            display: none;
+        }
+    }
 }
 // navbar ends here
 
@@ -97,4 +213,9 @@ body{
     height: calc(100vh - 70px);
     width: 100%;
     background: linear-gradient(45deg, var(--white), var(--soft-blush));
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
