@@ -106,6 +106,7 @@
     box-sizing: border-box;
     letter-spacing: .5px;
 }
+
 :root {
     --black: #111111;
     --white: #ffffff;
@@ -137,6 +138,7 @@ nav {
     height: 70px;
     border-bottom: 1px solid var(--soft-gold);
     background: var(--white);
+
     .left {
         a {
             text-decoration: none;
@@ -144,7 +146,8 @@ nav {
             h1 {
                 color: #111111;
                 font-size: 40px;
-                @include mobile{
+
+                @include mobile {
                     font-size: 30px;
                 }
             }
@@ -196,24 +199,122 @@ nav {
             }
         }
     }
+
     @include mobile {
         padding-inline: 20px;
+
         .middle {
             display: none;
         }
     }
 }
+
 // navbar ends here
 
-body{
+body {
     background-color: var(--white);
-    height: 150vh;
 }
-.hero{
+
+.hero {
+    position: relative;
     height: calc(100vh - 70px);
     width: 100%;
-    background: linear-gradient(45deg, var(--white), var(--soft-blush));
-    img{
+    background: var(--white);
+
+    // background: linear-gradient(45deg, var(--white), var(--soft-blush));
+    .overlay {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, var(--white), var(--soft-blush));
+        z-index: 1;
+        opacity: 0.7;
+    }
+
+    .h-main {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-inline: 40px;
+
+        h2 {
+            color: var(--grey);
+            font-size: 14px;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--black);
+            font-size: 80px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+
+            @include mobile {
+                font-size: 40px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--grey);
+            margin-bottom: 32px;
+        }
+
+        .btns {
+            display: flex;
+            gap: 16px;
+
+            button {
+                padding: 14px 28px;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+                outline: none;
+
+                &:first-child {
+                    background: var(--black);
+                    color: var(--white);
+
+                    &:hover {
+                        box-shadow: 5px 5px 0 var(--black);
+                        background: var(--soft-gold);
+                    }
+
+                }
+
+                &:last-child {
+                    background: var(--soft-blush);
+                    color: var(--black);
+
+                    &:hover {
+                        background: var(--soft-gold);
+                        color: var(--white);
+                        box-shadow: 5px 5px 0 var(--soft-blush);
+                    }
+
+                }
+            }
+        }
+    }
+
+    img {
         width: 100%;
         height: 100%;
         object-fit: cover;
